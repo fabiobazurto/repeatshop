@@ -1,24 +1,19 @@
-# README
+Part 1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    How many orders have been placed? 
+    89
 
-Things you may want to cover:
+    What is the LTV (lifetime value) of our customers? That is, how much revenue does a customer generate?
+    Assuming 1 day for average customer length->0.4837962962962963 
 
-* Ruby version
+    What products generate the most revenue?
+    icy fire
 
-* System dependencies
 
-* Configuration
+n = Dashboard.new
+n.orders.count #89
 
-* Database creation
+n.customer_lifetime_value  #0.4837962962962963 
 
-* Database initialization
+n.most_popular.title #icy fire
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

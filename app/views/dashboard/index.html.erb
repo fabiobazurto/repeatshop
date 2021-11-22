@@ -1,2 +1,18 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<h1>Dashboard repeat shopify</h1>
+
+<div>
+<p><label>Orders #:</label><%=@shopify.orders.count %></p>
+
+<p>
+    <label>Customer Lifetime Value:</label><%=@shopify.customer_lifetime_value %>
+</p>
+
+<P>
+    <label>Most revenue:</label><%=@shopify.most_popular.title %>
+</p>
+
+<%=button_tag "Reload" %>
+</div>
+
+
+<div id='loader'>Loading....</div>

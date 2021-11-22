@@ -1,18 +1,10 @@
-<h1>Dashboard repeat shopify</h1>
+<h1 class="text-4xl">Dashboard repeat shopify</h1>
 
-<div>
-<p><label>Orders #:</label><%=@shopify.orders.count %></p>
-
-<p>
-    <label>Customer Lifetime Value:</label><%=@shopify.customer_lifetime_value %>
-</p>
-
-<P>
-    <label>Most revenue:</label><%=@shopify.most_popular.title %>
-</p>
-
-<%=button_tag "Reload" %>
+<div id="spinner">
+    loading info
+    <div style="border-top-color:transparent"
+        class="w-16 h-16 border-4 border-blue-400 border-dotted rounded-full animate-spin"></div>
 </div>
 
+<%= react_component("DashboardComponent",  html_class: "flex-grow") %>
 
-<div id='loader'>Loading....</div>

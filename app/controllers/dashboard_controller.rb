@@ -1,5 +1,9 @@
 class DashboardController < ApplicationController
   def index
-    @shopify = DashboardService.new
+
+  end
+
+  def statistics
+    @shopify = DashboardService.new    
   end
 end

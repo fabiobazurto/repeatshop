@@ -6,8 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
     <!--
       If using a TypeScript entrypoint file:
         vite_typescript_tag 'application'
@@ -17,12 +15,20 @@
 
       Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
     -->
+    <script>
+      document.addEventListener('rails:attachBindings', function(e) {
+          e.preventDefault();
+      });
+    </script>
 
+    <%= vite_client_tag %>
+    <%= vite_react_refresh_tag %>
+    <%= vite_javascript_tag 'application' %>
   </head>
 
   <body>
-    <div id='root'>
+
       <%= yield %>
-    </div>
+
   </body>
 </html>

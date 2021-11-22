@@ -15,16 +15,19 @@ const DashboardComponent = () =>{
     axios.defaults.headers.common['X-CSRF-TOKEN'] = token
 
     useEffect(()=>{
+        getStatistics();
+    },[])
 
+    function getStatistics(){
+        setStatistics("");        
         axios.get('/dashboard/statistics.json')
             .then( resp => {
                 setStatistics(resp.data.statistics);
                 document.getElementById('spinner').classList.add("hidden");
                 document.getElementById('data').classList.remove("hidden");                
             })
-            .catch( resp => console.log(resp));
-    },[])
-
+            .catch( resp => console.log(resp));        
+    }
 
     return(
         <div id="data" class="hidden">
@@ -42,6 +45,10 @@ const DashboardComponent = () =>{
               <p class="text-center text-gray-500">Best revenue article</p>
             </div>
           </div>
+         
+          <button onClick={getStatistics} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Refresh
+          </button>
         </div>
     )
 

@@ -21,7 +21,7 @@ class DashboardService
   end
 
   def average_customer_value
-    average_order_value * average_purchase_frequency
+   ( average_order_value * average_purchase_frequency )||0
   end
 
   def average_order_value

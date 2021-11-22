@@ -39,11 +39,11 @@ class DashboardService
   def most_popular
     product_sales = orders.map { |o| o.line_items }.flatten.inject({}) do |product_sales, line_item|
       product_sales.merge(
-        Hash[line_item.product_id, (line_item.quantity*line_item.price.to_f)]
+        Hash[line_item.variant_id,  (line_item.quantity*line_item.price.to_f)]
       ) { |_, current, additional| current + additional }
     end
     product_sales = Hash[product_sales.sort_by{ |k, v| v }.reverse]
-     ShopifyAPI::Product.find(product_sales.keys.take(1)[0])    
+    ShopifyAPI::Variant.find(product_sales.keys.take(1)[0])
   end
   
 end

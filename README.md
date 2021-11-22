@@ -10,10 +10,10 @@ What products generate the most revenue?
 icy fire variant red
 
 
-  n = Dashboard.new
+    n = Dashboard.new
 
-  n.orders.count #89
+    n.orders.count #89
 
-  n.customer_lifetime_value  #0.4837962962962963 
+    n.customer_lifetime_value  #0.4837962962962963 
 
-  n.most_popular.title #icy fire variant red
+    n.most_popular.title #icy fire variant red
